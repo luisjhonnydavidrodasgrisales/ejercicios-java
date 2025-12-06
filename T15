@@ -1,0 +1,14 @@
+public class t15 {
+    public static void main(String[] args) {
+
+        // Declarar un array de 5 enteros llamado datos
+        int[] datos = new int[5];
+
+        // Asignar un valor a la posición 3 (índice 3)
+        datos[3] = 42;
+
+        // Mostrar el contenido de la posición 3
+        System.out.println("Valor en la posición 3: " + datos[3]);
+    }
+}
+
