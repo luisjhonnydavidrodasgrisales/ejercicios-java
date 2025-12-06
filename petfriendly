@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class petfriendly {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("¿trae mascota? (si/no)");
+        String respuesta = scanner.nextLine();
+        if (respuesta.equalsIgnoreCase("si")) {
+            System.out.println("¿que tipo de mascota? (perro/otro)");
+            String tipomascota = scanner.nextLine();
+            if (tipomascota.equalsIgnoreCase("perro")) {
+                System.out.println("hay un parque canino disponible");
+            } else {
+                System.out.println("bienvenido (zona comun)");
+            }
+        }else {
+            System.out.println("sin restricciones");
+        }
+        }
+}
