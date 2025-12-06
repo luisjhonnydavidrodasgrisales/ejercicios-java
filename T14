@@ -1,0 +1,14 @@
+public class t14{
+    public static void main(String[] args) {
+    // Declarar un array de 3 nombres de tipo String
+        String[] nombres = new String[3];
+        // Asignar valores
+        nombres[0] = "Ana";
+        nombres[1] = "Luis";
+        nombres[2] = "Carlos";
+
+        // Imprimir el segundo nombre
+        System.out.println("Segundo nombre: " + nombres[1]);
+    }
+}
+
