@@ -1,0 +1,11 @@
+public class t20 {
+    public static void main(String[] args) {
+
+        String[] nombres = {"Ana", "Luis", "Carlos"};
+
+        for (String nombre : nombres) {
+            System.out.println("Hola " + nombre);
+        }
+    }
+}
+
