@@ -1,0 +1,16 @@
+public class recomendacionclima {
+    public static void main(String[] args) {
+        String clima = "lluvia";
+    switch (clima) {
+        case "lluvia":
+            System.out.println("lleva un paraguas");
+            break;
+        case "nublado":
+            System.out.println("lleva una chaqueta");
+            break;
+        case "soleado":
+            System.out.println("lleva un bloqueador");
+            break;
+        default:
+            System.out.println("no hay recomendacion");
+}}}
