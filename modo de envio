@@ -1,0 +1,9 @@
+public class mododeenvio {
+    public static void main(String[] args) {
+        double saldo = 100.0;
+        double costoextra = 20.0;
+        if (saldo >= costoextra) {
+            System.out.println("envio expres confirmado");
+        } else {
+            System.out.println("envio estandar sugerido");
+}}}
