@@ -1,0 +1,17 @@
+public class t13 {
+    public static void main(String[] args) {
+
+                // Declarar un array de 4 números enteros llamado notas
+                int[] notas = new int[4];
+
+                // Asignar valores a cada posición
+                notas[0] = 10;
+                notas[1] = 8;
+                notas[2] = 7;
+                notas[3] = 9;
+
+                // Mostrar en pantalla la primera y la última nota
+                System.out.println("Primera nota: " + notas[0]);
+                System.out.println("Última nota: " + notas[notas.length - 1]);
+            }
+        }
