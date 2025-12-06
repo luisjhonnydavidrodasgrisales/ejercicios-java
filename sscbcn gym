@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class suscripcionalgym {
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println("=== SUSCRIPCIONES GIMNASIO ===");
+            System.out.println("1. Básico");
+            System.out.println("2. Intermedio");
+            System.out.println("3. Premium");
+            System.out.print("Seleccione el plan: ");
+            int plan = sc.nextInt();
+
+            System.out.print("Ingrese meses de suscripción: ");
+            int meses = sc.nextInt();
+
+            if (meses <= 0) {
+                System.out.println("Error: los meses deben ser mayores a 0.");
+                return;
+            }
+
+            int precio = 0;
+            String nombrePlan = "";
+
+            switch (plan) {
+                case 1:
+                    nombrePlan = "Básico";
+                    if (meses == 1) precio = 30000;
+                    else if (meses == 3) precio = 80000;
+                    else if (meses >= 6) precio = 150000;
+                    else System.out.println("Tiempo no válido para este plan.");
+                    break;
+
+                case 2:
+                    nombrePlan = "Intermedio";
+                    if (meses == 1) precio = 40000;
+                    else if (meses == 3) precio = 110000;
+                    else if (meses >= 6) precio = 200000;
+                    else System.out.println("Tiempo no válido para este plan.");
+                    break;
+
+                case 3:
+                    nombrePlan = "Premium";
+                    if (meses == 1) precio = 60000;
+                    else if (meses == 3) precio = 160000;
+                    else if (meses >= 6) precio = 280000;
+                    else System.out.println("Tiempo no válido para este plan.");
+                    break;
+
+                default:
+                    System.out.println("Opción de plan inválida.");
+                    return;
+            }
+
+            if (precio > 0) {
+                System.out.println("Plan: " + nombrePlan);
+                System.out.println("Meses: " + meses);
+                System.out.println("Total a pagar: $" + precio);
+            }
+        }
+    }
+
+
