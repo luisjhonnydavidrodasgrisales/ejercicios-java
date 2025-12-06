@@ -1,0 +1,9 @@
+public class alias {
+    public static void main(String[] args) {
+        String alias = "@alias3";
+    if (alias.startsWith("@") && alias.length() >= 4 && alias.length() <= 15) {
+        System.out.println("alias valido");
+    } else {
+        System.out.println("alias invalido");
+    }}
+    }
