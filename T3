@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class t3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int contador = 0;
+        String respuesta = "si";
+
+        while (respuesta.equalsIgnoreCase("si")) {
+            contador++;
+            System.out.println("Ha entrado un estudiante.");
+            System.out.println("¿Entró otro estudiante? (si/no)");
+            respuesta = scanner.nextLine();
+        }
+
+        System.out.println("Total de estudiantes que entraron: " + contador);
+        scanner.close();
+    }
+}
