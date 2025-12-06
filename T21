@@ -1,0 +1,14 @@
+public class t21 {
+    public static void main(String[] args) {
+
+        int[] numeros = {3, 6, 9, 12, 15};
+        int suma = 0;
+
+        for (int n : numeros) {
+            suma += n;
+        }
+
+        System.out.println("La suma total es: " + suma);
+    }
+}
+
