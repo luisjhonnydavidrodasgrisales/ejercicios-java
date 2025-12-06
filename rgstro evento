@@ -1,0 +1,11 @@
+public class registroevento {
+    public static void main(String[] args) {
+        int edad = 25;
+        int cuposDisponibles = 10;
+        if (edad >= 18 && cuposDisponibles > 0) {
+        System.out.println("registro exitoso");
+    }  else {
+        System.out.println(" no se puede registrar");
+    }
+}
+}
