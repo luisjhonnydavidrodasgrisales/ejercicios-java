@@ -1,0 +1,69 @@
+
+
+public class PromedioCalificaciones {
+
+    // Función principal que traduce el pseudocódigo calcularPromedio()
+    public static void calcularPromedio() {
+        // Inicialización de variables
+        Scanner scanner = new Scanner(System.in);
+        double suma = 0.0;
+        int contador = 0;      // Contador de calificaciones válidas (0-10)
+        int invalidas = 0;     // Contador de calificaciones inválidas
+        double calificacion;   // Usamos double para la calificación por si el usuario ingresa decimales
+        
+        System.out.println("--- Ejercicio: Promedio de Calificaciones con Validación ---");
+
+        // Inicio del ciclo HACER...MIENTRAS (do-while en Java)
+        do {
+            System.out.print("Ingrese una calificación (0-10) o -1 para terminar: ");
+            // Leer calificacion
+            if (scanner.hasNextDouble()) {
+                calificacion = scanner.nextDouble();
+            } else {
+                // Manejo de entrada no numérica para evitar errores
+                System.out.println("¡Error de entrada! Por favor, ingrese un número.");
+                scanner.next(); // Limpiar el buffer de entrada
+                calificacion = -2; // Valor temporal para forzar la continuación del bucle o una validación
+            }
+            
+            // SI calificacion != -1 ENTONCES
+            if (calificacion != -1) {
+                // Validación del rango: SI calificacion >= 0 Y calificacion <= 10 ENTONCES
+                if (calificacion >= 0 && calificacion <= 10) {
+                    // Calificación válida
+                    suma = suma + calificacion;
+                    contador = contador + 1;
+                } else {
+                    // SINO (Calificación fuera de rango, pero no -1)
+                    invalidas = invalidas + 1;
+                    System.out.println("Calificación inválida. Debe estar entre 0 y 10.");
+                }
+            } 
+            
+            // MIENTRAS calificacion != -1
+        } while (calificacion != -1);
+
+        // --- Muestra de resultados ---
+
+        // SI contador > 0 ENTONCES
+        if (contador > 0) {
+            double promedio = suma / contador;
+            
+            System.out.println("\n--- Resultados ---");
+            System.out.printf("Promedio: %.2f%n", promedio); // Imprime el promedio con dos decimales
+            System.out.println("Calificaciones válidas: " + contador);
+            System.out.println("Calificaciones inválidas: " + invalidas);
+        } else {
+            // SINO
+            System.out.println("\nNo se ingresaron calificaciones válidas.");
+            System.out.println("Calificaciones inválidas: " + invalidas);
+        }
+        
+        scanner.close(); // Cerrar el objeto Scanner
+    }
+
+    // Punto de INICIO del programa
+    public static void main(String[] args) {
+        calcularPromedio();
+    }
+}
