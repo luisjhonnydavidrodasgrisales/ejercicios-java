@@ -1,0 +1,101 @@
+
+
+public class CalculadoraAreas {
+
+    // Constante PI
+    private static final double PI = 3.14159; // PI = 3.14159
+
+    // FUNCIÓN areaCirculo(radio)
+    public static double areaCirculo(double radio) {
+        // RETORNAR PI * radio * radio
+        return PI * radio * radio;
+    }
+
+    // FUNCIÓN areaRectangulo(base, altura)
+    public static double areaRectangulo(double base, double altura) {
+        // RETORNAR base * altura
+        return base * altura;
+    }
+
+    // FUNCIÓN areaTriangulo(base, altura)
+    public static double areaTriangulo(double base, double altura) {
+        // RETORNAR (base * altura) / 2
+        // Nota: El pseudocódigo tenía (base + altura) / 2, que es incorrecto para el área del triángulo. 
+        // Se ha corregido a (base * altura) / 2 en la implementación.
+        return (base * altura) / 2.0; 
+    }
+
+    // INICIO del programa
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        double radio, base, altura, area;
+
+        System.out.println("--- CALCULADORA DE ÁREAS ---");
+        System.out.println("1. Área del círculo");
+        System.out.println("2. Área del rectángulo");
+        System.out.println("3. Área del triángulo");
+
+        System.out.print("\nSeleccione una opción: ");
+        // LEER opcion
+        if (scanner.hasNextInt()) {
+            opcion = scanner.nextInt();
+        } else {
+            System.out.println("Opción inválida. Debe seleccionar 1, 2 o 3.");
+            scanner.close();
+            return;
+        }
+
+        // SEGÚN opcion HACER (switch en Java)
+        switch (opcion) {
+            
+            // CASO 1: Círculo             case 1:
+                System.out.print("Ingrese el radio del círculo: ");
+                // LEER radio
+                radio = scanner.nextDouble();
+                
+                // area = areaCirculo(radio)
+                area = areaCirculo(radio);
+                
+                System.out.printf("El área del círculo es: %.2f%n", area);
+                break;
+                
+            // CASO 2: Rectángulo             case 2:
+                System.out.print("Ingrese la base del rectángulo: ");
+                // LEER base
+                base = scanner.nextDouble();
+                
+                System.out.print("Ingrese la altura del rectángulo: ");
+                // LEER altura
+                altura = scanner.nextDouble();
+                
+                // area = areaRectangulo(base, altura)
+                area = areaRectangulo(base, altura);
+                
+                System.out.printf("El área del rectángulo es: %.2f%n", area);
+                break;
+                
+            // CASO 3: Triángulo             case 3:
+                System.out.print("Ingrese la base del triángulo: ");
+                // LEER base
+                base = scanner.nextDouble();
+                
+                System.out.print("Ingrese la altura del triángulo: ");
+                // LEER altura
+                altura = scanner.nextDouble();
+                
+                // area = areaTriangulo(base, altura)
+                area = areaTriangulo(base, altura);
+                
+                System.out.printf("El área del triángulo es: %.2f%n", area);
+                break;
+                
+            // POR DEFECTO
+            default:
+                System.out.println("Opción inválida");
+                break;
+        }
+
+        scanner.close();
+    }
+}
