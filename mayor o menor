@@ -1,0 +1,77 @@
+
+
+public class EncontrarMayorMenor {
+
+    public static void encontrarMayorMenor() {
+        // Inicialización de variables
+        Scanner scanner = new Scanner(System.in);
+        int numero;
+        int mayor = 0;
+        int menor = 0;
+        
+        // Variable booleana para controlar la primera iteración
+        boolean primerNumero = true; // Corresponde a VERDADERO en el pseudocódigo
+
+        System.out.println("--- Ejercicio: Encontrar el Mayor y Menor ---");
+
+        // Inicio del ciclo HACER...MIENTRAS (do-while en Java)
+        do {
+            System.out.print("Ingrese un número entero (0 para terminar): ");
+            
+            // Leer número
+            if (scanner.hasNextInt()) {
+                numero = scanner.nextInt();
+            } else {
+                // Manejo de entrada no numérica
+                System.out.println("¡Error! Por favor, ingrese un número entero.");
+                scanner.next(); // Limpiar el buffer de entrada
+                numero = -1; // Asignar un valor temporal para forzar la continuación del bucle
+                continue; // Saltar el resto de la iteración
+            }
+
+            // SI numero != 0 ENTONCES
+            if (numero != 0) {
+                
+                // SI primerNumero = VERDADERO ENTONCES (Inicialización con el primer número)
+                if (primerNumero) {
+                    mayor = numero;
+                    menor = numero;
+                    primerNumero = false; // El primer número ya se procesó
+                } else {
+                    // SINO (comparar con los siguientes números)
+
+                    // SI numero > mayor ENTONCES
+                    if (numero > mayor) {
+                        mayor = numero; // El nuevo número es el mayor
+                    }
+                    
+                    // SI numero < menor ENTONCES
+                    if (numero < menor) {
+                        menor = numero; // El nuevo número es el menor
+                    }
+                }
+            }
+            
+            // MIENTRAS numero != 0
+        } while (numero != 0);
+        
+        // --- Muestra de resultados ---
+
+        // SI primerNumero = FALSO ENTONCES (Indica que se ingresó al menos un número distinto de 0)
+        if (!primerNumero) { 
+            System.out.println("\n--- Resultados ---");
+            System.out.println("El número mayor es: " + mayor);
+            System.out.println("El número menor es: " + menor);
+        } else {
+            // SINO (Solo se ingresó 0 o nada)
+            System.out.println("\nNo se ingresaron números.");
+        }
+        
+        scanner.close(); // Cerrar el objeto Scanner
+    }
+
+    // Punto de INICIO del programa
+    public static void main(String[] args) {
+        encontrarMayorMenor();
+    }
+}
